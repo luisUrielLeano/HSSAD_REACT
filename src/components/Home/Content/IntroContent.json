@@ -1,0 +1,10 @@
+{
+    "title": "JUNTOS PODEMOS COMBATIR LA DEPRESIÓN",
+    "text": "Nuestro quiz implementado con inteligencia artificial puede deducir si eres victima de esta enfermedad silenciosa",
+    "button": [
+        {
+            "title": "Take Quiz",
+            "color": "#0000CC"
+        }
+    ]
+}
