@@ -1,31 +1,18 @@
 import React, { useState, lazy } from 'react';
-import { Form, Input, Row, Col, Alert } from 'antd';
-
-import HSSADAPI from '../../apis/HSSADApi';
+import { Form, Input, Row, Col } from 'antd';
 
 import * as S from './styles';
 
 const Button = lazy(() => import('../../common/Button'));
 
-const LoginForm = () => {
+const LoginForm = ( { signIn }) => {
     const [ username, setUsername ] = useState();
     const [ password, setPassword ] = useState();
-    const [ error, setError ] = useState();
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-        try{
-            const response = await HSSADAPI.post('/auth',{
-                username,
-                password
-            });
-            setError(null);
-            console.log(response.data);
-        }catch( err ){
-            setError(err.response.data);
-        }
-    };
+        signIn(username, password);
+    }
 
     const handleUsernameChange = (e) => { 
         setUsername(e.target.value);
@@ -34,14 +21,6 @@ const LoginForm = () => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     }
-
-    const errorAlert = error ? 
-    <Row>
-        <Col span='8'></Col>
-        <Col span='8'>
-            <Alert message= { `Auth failed: ${ error } `} type='error' banner  />
-        </Col>
-    </Row> : ' '
 
     const layout = {
         labelCol: { span: 8 },
@@ -86,7 +65,6 @@ const LoginForm = () => {
                     Login
                 </Button>
             </Form.Item>
-            { errorAlert }
         </Form>
     );
 };
