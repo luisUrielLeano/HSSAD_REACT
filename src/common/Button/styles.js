@@ -18,8 +18,7 @@ export const Button = styled.button`
         props.disabled && css`
             cursor: not-allowed;
             opacity: 0.4;
-        `};
-    }
+    `};
 
     @media only screen and (max-width: 1024px) {
         width: ${(props) => (props.width ? '160px' : '100%')};
