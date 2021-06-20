@@ -8,14 +8,14 @@ import AuthProvider from '../context/AuthContext';
 const Login = lazy( () => import('../components/Login'));
 const Home = lazy( () => import('../components/Home'));
 const AdminPage = lazy( () => import('../components/AdminPage'));
-const Quiz = lazy( () => import('../components/Quiz'));
+const Survey = lazy( () => import('../components/Survey'));
 
 const Router = () => {
     return (
     <Suspense fallback={null}>
         <GlobalStyles />
         <Switch>
-            <Route exact path='/quiz' component={ Quiz } />
+            <Route exact path='/survey' component={ Survey } />
             <Route exact path='/home' component={ Home } />
             <AuthProvider>
                 <Route exact path='/login' component={ Login } />
