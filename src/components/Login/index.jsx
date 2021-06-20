@@ -6,7 +6,7 @@ import { Row, Col, Alert} from 'antd';
 import { AuthContext } from '../../context/AuthContext';
 import HSSADAPI from '../../apis/HSSADApi';
 
-import LoginForm from '../LoginForm/';
+import LoginForm from './LoginForm';
 import SvgIcon from '../../common/SvgIcon';
 
 import * as S from './styles';
