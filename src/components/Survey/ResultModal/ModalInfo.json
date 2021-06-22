@@ -1,0 +1,9 @@
+{
+    "modalTitle" : "Resultados de la predicción",
+    "negativeDescription": "No presentas los suficientes síntomas para determinar  un posible caso de depresión.\n Te recomendamos volver a tomar el test en otra ocasión.  Y de igual manera buscar ayuda psicológica en caso de que lo creas necesario.",
+    "positiveDescription":  "Presentas los suficientes síntomas para determinar un posible caso de depresión. Te recomendamos buscar ayuda psicológica profesional cuanto antes.",
+    "positiveImage": "sad.svg",
+    "negativeImage": "happy.svg",
+    "positiveResult": "POSITIVO",
+    "negativeResult": "NEGATIVO"
+}
