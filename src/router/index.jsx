@@ -14,10 +14,10 @@ const Router = () => {
     < Suspense fallback={null}>
         <GlobalStyles />
         <Switch>
-            <Route exact path='/Home' component={ Home } />
+            <Route exact path='/' component={ Home } />
             <AuthProvider>
-                <Route exact path='/login' component={ Login } />
-                <ProtectedRoute exact path='/adminPage' component={ AdminPage } />
+                <Route path='/login' component={ Login } />
+                <ProtectedRoute path='/adminPage' component={ AdminPage } />
             </AuthProvider>
         </Switch>
     </ Suspense >
