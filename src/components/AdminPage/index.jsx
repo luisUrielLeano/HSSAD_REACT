@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { AuthContext } from '../../context/AuthContext';
+import MainLayout from './MainLayout';
 
 const AdminPage = () => {
-    const { auth } = useContext(AuthContext);
     return (
-        <h5>
-            Admin:  { auth.user.username }
-        </h5>
-    )
+        <MainLayout/>
+    );
 };
 
 export default AdminPage;
