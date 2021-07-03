@@ -1,5 +1,6 @@
 import { Row, Col } from 'antd';
 import Slide from 'react-awesome-reveal';
+import { useHistory } from 'react-router-dom';
 
 import SvgIcon from '../../../../common/SvgIcon';
 import Button from '../../../../common/Button';
@@ -7,6 +8,11 @@ import Button from '../../../../common/Button';
 import * as S from './styles';
 
 const RightBlock = ( { title, content, button, icon, t, id}) => {
+    const history = useHistory();
+
+    const handleTakeQuiz = () => {
+        history.replace('/survey');
+    };
     
     return (
         <S.RightBlockContainer>
@@ -17,19 +23,14 @@ const RightBlock = ( { title, content, button, icon, t, id}) => {
                             <h6>{ title }</h6>
                             <S.Content>{ content }</S.Content>
                             <S.ButtonWrapper>
-                                {button &&
-                                    typeof button === "object" &&
-                                    button.map((item, id) => {
-                                        return (
-                                            <Button
-                                                key={id}
-                                                color={item.color}
-                                                width="true"
-                                            >
-                                                {item.title}
-                                            </Button>
-                                        );
-                                    })}
+                                <Button
+                                    key='quizButton'
+                                    color='#0000CC'
+                                    width="true"
+                                    onClick={ handleTakeQuiz }
+                                    >
+                                        Contestar Encuesta
+                                </Button>
                             </S.ButtonWrapper>
                         </S.ContentWrapper>
                     </Slide>
