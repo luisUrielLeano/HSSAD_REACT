@@ -55,8 +55,8 @@ const ShowUsers = () => {
         pageSize,
         resetPagination,
     } = useDataTable({
-        columns: columns, //pass info from api
-        dataSource: users, //pass info from api
+        columns: columns,
+        dataSource: users.filter(user => !(user.username === auth.user.username)), 
     });
 
     return(
