@@ -107,7 +107,7 @@ const SurveyForm = ({ completeSurvey }) => {
                 rules={[{required:true, message: 'Selecciona tu nivel máximo de educación'}]}
             >
                 <Select placeholder='Seleccione su nivel de educación' onChange={ handleEducationLevelChange }>
-                    <Option value='Prescolar'>Prescolar</Option>
+                    <Option value='Preescolar'>Preescolar</Option>
                     <Option value='Educación Primaria'>Educación Primaria</Option>
                     <Option value='Educación Secundaria'>Educación Secundaria</Option>
                     <Option value='Educación Media Superior'>Educación Media Superior</Option>
