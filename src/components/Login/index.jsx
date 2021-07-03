@@ -32,7 +32,7 @@ const Login = () => {
             });
             const data = response.data;
             dispatch({ type: 'SIGN_IN', data: data });
-            history.replace('/adminPage');
+            history.replace('/adminPage/dashboard');
         }catch( err ){
             setError(err.response.data);
         }
