@@ -1,5 +1,9 @@
 import React, {useReducer } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Row, Col } from 'antd';
+import {
+    ArrowLeftOutlined
+} from '@ant-design/icons';
 
 import Quiz from '../Survey/Quiz';
 import SurveyForm from './SurveyForm';
@@ -20,7 +24,7 @@ const Survey = () => {
     };
 
     const handleOk = () => {
-        history.replace('/home');       
+        history.replace('/');       
         setState({isModalVisible: false});
         
     };
@@ -42,8 +46,19 @@ const Survey = () => {
         sendData({...state.data, answers});
         showModal();
     };
+
+    const handleBackButton = () => {
+        history.replace('/');
+    };
+
     return (
         <> 
+            <Row gutter={24} type='flex'>
+                <Col span={5}/>
+                <Col span={8}>
+                    <ArrowLeftOutlined onClick = { handleBackButton } style={{ fontSize: '150%', paddingTop: '5rem'}}/>
+                </Col>
+            </Row>
             { !state.showQuiz ? <SurveyForm completeSurvey={ completeSurvey }/> : <Quiz completeQuiz={ completeQuiz }/>}
             <ResultModal isModalVisible={state.isModalVisible} prediction={state.prediction} handleOk={handleOk} />
         </>
