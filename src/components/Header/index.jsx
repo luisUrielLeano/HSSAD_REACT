@@ -28,12 +28,6 @@ const Header = () => {
                 <S.CustomNavLinkSmall>
                     <S.Span>About</S.Span>
                 </S.CustomNavLinkSmall>
-                <S.CustomNavLinkSmall>
-                    <S.Span>Mission</S.Span>
-                </S.CustomNavLinkSmall>
-                <S.CustomNavLinkSmall>
-                    <S.Span>Product</S.Span>
-                </S.CustomNavLinkSmall>
                 <S.CustomNavLinkSmall
                     style={{ width: '180px' }}
                 >
